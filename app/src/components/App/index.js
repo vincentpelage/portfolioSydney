@@ -21,34 +21,6 @@ class App extends React.Component {
     inverted: false,
   }
 
-  componentDidMount() {
-    // const aboutme = document.querySelector('#about-me');
-    // const bar1 = document.querySelector('.bar1');
-    // const bar2 = document.querySelector('.bar2');
-    // const bar3 = document.querySelector('.bar3');
-    //
-    // function onEntry(entry) {
-    //   console.log(entry[0].isIntersecting);
-    //   if (entry[0].intersectionRatio === 1) {
-    //     bar1.style.backgroundColor = 'black';
-    //     bar2.style.backgroundColor = 'black';
-    //     bar3.style.backgroundColor = 'black';
-    //   }
-    //   else if (entry[0].intersectionRatio !== 1) {
-    //     bar1.style.backgroundColor = 'white';
-    //     bar2.style.backgroundColor = 'white';
-    //     bar3.style.backgroundColor = 'white';
-    //   }
-    // }
-    //
-    // const options = {
-    //   threshold: [1],
-    // };
-    //
-    // const observer = new IntersectionObserver(onEntry, options);
-    // observer.observe(aboutme);
-  }
-
   handleIntersection = (event) => {
     console.log('It works');
     const bar1 = document.querySelector('.bar1');

@@ -44,10 +44,7 @@ const Header = ({ handleClick, inverted }) => {
       </ul>
       <div className={classNameIntro}>
         <h1>Vincent Pélage</h1>
-        <TextLoop speed={3000}>
-          <span className="skills-loop">React.js </span>
-          <span className="skills-loop">Node.js </span>
-        </TextLoop>
+        <span className="skills-loop">React.js / Node.js</span>
         <h2>Developer</h2>
       </div>
     </div>

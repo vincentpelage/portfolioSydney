@@ -9,17 +9,12 @@ import React from 'react';
 /*
  * Component
  */
-
+import Form from './Form';
 
 const Contact = () => (
   <div id="contact">
     <p className="h3 white">Contact</p>
-    <form>
-      <input placeholder="Name" type="texte" />
-      <input placeholder="E-mail" type="texte" />
-      <textarea placeholder="Message" type="texte" />
-      <button type="submit">Send</button>
-    </form>
+    <Form />
   </div>
 );
 
