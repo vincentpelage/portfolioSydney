@@ -1,7 +1,7 @@
 // Package import
 const express = require('express');
 const bodyParser = require('body-parser');
-const axios = require('axios');
+const nodemailer = require('nodemailer');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
@@ -10,6 +10,15 @@ const Contact = require('./formModel');
 
 // Init variable
 const app = express();
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: `${process.env.MAIL_ADDRESS}`,
+    pass: `${process.env.MAIL_PASS}`,
+  },
+});
+
 
 // le .use c'est quand on utilise un middleware
 // (une fonction qui se met entre la requete et le traitement de la requete)
@@ -90,6 +99,20 @@ app.post('/form-submit', (req, res) => {
       return err;
     }
     console.log(savedContact);
+    const mailOptions = {
+      from: email,
+      to: 'vincent.plge@gmail.com',
+      subject: 'New message from Portfolio',
+      html: `<p>Name: ${name}</p><p>Message: ${message}</p>`,
+    };
+    transporter.sendMail(mailOptions, (err, info) => {
+      if (err) {
+        console.log(err);
+      }
+      else {
+        console.log(info);
+      }
+    });
     res.send({ message: 'true' });
   });
 });
